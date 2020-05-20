@@ -1,29 +1,14 @@
 <template>
   <div class="container">
     <div>
-      <logo />
+      <!-- <logo /> -->
       <h1 class="title">
-        bbc-landing
+        Tilson Speed Test
       </h1>
       <h2 class="subtitle">
         A landing page for Tilson&#39;s Broadband Consulting clients
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <iframe width="100%" height="650px" frameborder="0" src="https://tilson.speedtestcustom.com"></iframe>
     </div>
   </div>
 </template>

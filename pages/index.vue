@@ -1,12 +1,10 @@
 <template>
   <div class="container">
     <div class="leading">
-      <h1>
-        TWISP Broadband Initiative
-      </h1>
-      <h4>
-        Connecting Methow Valley to the 21st Century
-      </h4>
+      <h1>TWISP Broadband Initiative</h1>
+      <h4>Connecting Methow Valley to the 21st Century</h4>
+
+      <!-- START OF SPEED WIDGET -->
       <div class="form-container">
         <div id="sc-container">
           <div id="sc-branding" class="sc-bb">
@@ -19,10 +17,9 @@
           </div>
         </div>
       </div>
-      <script
-        src="https://cdn.speedcheck.org/basic/scbjs.min.js"
-        async
-      ></script>
+      <script src="https://cdn.speedcheck.org/basic/scbjs.min.js" async></script>
+      <!-- END OF SPEED WIDGET -->
+
       <div>
         <pre v-if="results">{{ results }}</pre>
       </div>
@@ -36,7 +33,9 @@
 <script>
 export default {
   mounted: function() {
-    let vm = this;
+    let vm = this; //Defining the vue instance
+
+    // Code to catch API call going out to grab the data collected by speedcheck.org
     var open = window.XMLHttpRequest.prototype.open,
       send = window.XMLHttpRequest.prototype.send;
 
@@ -46,9 +45,6 @@ export default {
     }
 
     function sendReplacement(data) {
-      /**
-       * PLACE HERE YOUR CODE WHEN REQUEST IS SENT
-       */
       if (this._url == "https://api.speedspot.org/basic" && arguments[0]) {
         console.log(arguments[0]);
         vm.results = JSON.parse(arguments[0]);
@@ -58,6 +54,7 @@ export default {
 
     window.XMLHttpRequest.prototype.open = openReplacement;
     window.XMLHttpRequest.prototype.send = sendReplacement;
+
   },
   data: function() {
     return {

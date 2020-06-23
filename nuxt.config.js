@@ -18,8 +18,13 @@ export default {
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto:wght@300&display=swap"
+        href:
+          "https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto:wght@300&display=swap"
       }
+    ],
+    script: [
+      { src: "https://js.arcgis.com/4.14/" },
+      { src: "https://survey123.arcgis.com/api/jsapi" }
     ]
   },
   /*

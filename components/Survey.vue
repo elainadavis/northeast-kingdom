@@ -1,12 +1,6 @@
 <template>
   <div class="container">
     <div class="leading">
-      <h1>
-        TWISP Broadband Initiative
-      </h1>
-      <h4>
-        Connecting Methow Valley to the 21st Century
-      </h4>
       <div class="form-container">
         <div id="sc-container">
           <div id="sc-branding" class="sc-bb">
@@ -29,12 +23,6 @@
           class="panel panel-no-padding panel-no-border"
         ></div>
       </div>
-      <!-- <div>
-        <pre v-if="results">{{ results }}</pre>
-      </div> -->
-      <!-- <div class="iframecontainer"> -->
-      <!-- <iframe width="100%" height="650px" frameborder="0" src="https://tilson.speedtestcustom.com"></iframe> -->
-      <!-- </div> -->
     </div>
   </div>
 </template>
@@ -68,8 +56,6 @@ export default {
   },
   data: function() {
     return {
-      uploadSpeed: null,
-      downloadSpeed: null,
       results: {}
     };
   },
@@ -85,7 +71,9 @@ export default {
           // ANSWER INTERNET SPEED QUESTION WITH CONNECTION SPEED INFO //
           //
           survey123WebForm.setQuestionValue({
-            internet_speed: speedData.downloadValue
+            internet_speed: speedData.downloadValue,
+            field_14: speedData.uploadValue,
+            
           });
         }
       });

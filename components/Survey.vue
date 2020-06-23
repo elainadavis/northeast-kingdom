@@ -1,28 +1,21 @@
 <template>
   <div class="container">
-    <div class="leading">
-      <div class="form-container">
-        <div id="sc-container">
-          <div id="sc-branding" class="sc-bb">
-            <a target="_blank" href="https://www.speedcheck.org/">
-              <img
-                src="https://cdn.speedcheck.org/branding/speedcheck-logo-18.png"
-                alt="Speedcheck"
-              />
-            </a>
-          </div>
+    <div class="form-container" id="speedcheckcontainer">
+      <div class="introtitle">
+        <h1>Methow Valley Internet Survey</h1>
+        <h3>Please run the speed test below to begin the survey process, we look forward to capturing your feedback in an effort to improve and expand coverage in your area.</h3>
+      </div>
+      <div id="sc-container">
+        <div id="sc-branding" class="sc-bb">
+          <a target="_blank" href="https://www.speedcheck.org/">
+            <img src="https://cdn.speedcheck.org/branding/speedcheck-logo-18.png" alt="Speedcheck" />
+          </a>
         </div>
       </div>
-      <script
-        src="https://cdn.speedcheck.org/basic/scbjs.min.js"
-        async
-      ></script>
-      <div id="survey-panel" class="panel panel-white panel-no-border hide">
-        <div
-          id="survey123-webform"
-          class="panel panel-no-padding panel-no-border"
-        ></div>
-      </div>
+    </div>
+    <script src="https://cdn.speedcheck.org/basic/scbjs.min.js" async></script>
+    <div id="survey-panel" class="panel panel-white panel-no-border hide">
+      <div id="survey123-webform" class="panel panel-no-padding panel-no-border"></div>
     </div>
   </div>
 </template>
@@ -46,7 +39,9 @@ export default {
       if (this._url == "https://api.speedspot.org/basic" && arguments[0]) {
         console.log(arguments[0]);
         vm.results = JSON.parse(arguments[0]);
-        vm.initializeForm(vm.results);
+        if (!vm.formInitialized) {
+          vm.initializeForm(vm.results);
+        }
       }
       return send.apply(this, arguments);
     }
@@ -56,24 +51,27 @@ export default {
   },
   data: function() {
     return {
-      results: {}
+      results: {},
+      formInitialized: false
     };
   },
   methods: {
     initializeForm: function(speedData) {
+      this.formInitialized = true;
+      document.getElementById("speedcheckcontainer").style.display = "none";
       const survey123WebForm = new Survey123WebForm({
         container: "survey123-webform",
         clientId: "Jy4JtM71ralXVggd",
         portalUrl: "https://www.arcgis.com",
         itemId: "f7d1b61670ec49788a8a9f246f5b2e9b",
+        hideElements: "navbar",
         onFormLoaded: data => {
           //
           // ANSWER INTERNET SPEED QUESTION WITH CONNECTION SPEED INFO //
           //
           survey123WebForm.setQuestionValue({
             internet_speed: speedData.downloadValue,
-            field_14: speedData.uploadValue,
-            
+            field_14: speedData.uploadValue
           });
         }
       });
@@ -86,9 +84,18 @@ export default {
 </script>
 
 <style lang="scss">
-.leading {
-  text-align: center;
-  margin-top: 50px;
+#speedcheckcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .introtitle {
+    max-width: 900px;
+    text-align: center;
+    margin: 15px;
+    color: #2aaee1;
+  }
 }
 .iframecontainer {
   margin: 40px;

@@ -20,6 +20,28 @@
         robin showah.
       </p>
     </div>
+    <div class="site-sections">
+      <a href="/survey.html" class="ssection">
+        <img src="~assets/images/icons/library.svg" />
+        <h5>Document Library</h5>
+      </a>
+      <a href="/survey.html" class="ssection">
+        <img src="~assets/images/icons/calendar.svg" />
+        <h5>Important Dates</h5>
+      </a>
+      <a href="/survey.html" class="ssection">
+        <img src="~assets/images/icons/loudspeaker.svg" />
+        <h5>Recent News</h5>
+      </a>
+      <a href="/survey.html" class="ssection">
+        <img src="~assets/images/icons/community.svg" />
+        <h5>Contact Us</h5>
+      </a>
+      <a href="/survey.html" class="ssection">
+        <img src="~assets/images/icons/survey.svg" />
+        <h5>Community Survey</h5>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -51,6 +73,25 @@ export default {
     img {
       width: 80px;
       margin: 20px;
+    }
+  }
+}
+.site-sections {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  .ssection {
+    width: 25%;
+    max-width: 160px;
+    padding: 20px;
+    text-decoration: none;
+    color: #000;
+    img {
+      width: 100%;
+    }
+    h5 {
     }
   }
 }

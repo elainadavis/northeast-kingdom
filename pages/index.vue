@@ -21,24 +21,34 @@
       </p>
     </div>
     <div class="site-sections">
-      <a href="/survey.html" class="ssection">
-        <img src="~assets/images/icons/library.svg" />
+      <a href="/library" class="ssection">
+        <div class="iconholder">
+          <img src="~assets/images/icons/library.svg" />
+        </div>
         <h5>Document Library</h5>
       </a>
-      <a href="/survey.html" class="ssection">
-        <img src="~assets/images/icons/calendar.svg" />
+      <a href="/calendar" class="ssection">
+        <div class="iconholder">
+          <img src="~assets/images/icons/calendar.svg" />
+        </div>
         <h5>Important Dates</h5>
       </a>
-      <a href="/survey.html" class="ssection">
-        <img src="~assets/images/icons/loudspeaker.svg" />
+      <a href="/news" class="ssection">
+        <div class="iconholder">
+          <img src="~assets/images/icons/loudspeaker.svg" />
+        </div>
         <h5>Recent News</h5>
       </a>
-      <a href="/survey.html" class="ssection">
-        <img src="~assets/images/icons/community.svg" />
+      <a href="/contact" class="ssection">
+        <div class="iconholder">
+          <img src="~assets/images/icons/community.svg" />
+        </div>
         <h5>Contact Us</h5>
       </a>
-      <a href="/survey.html" class="ssection">
-        <img src="~assets/images/icons/survey.svg" />
+      <a href="/survey" class="ssection">
+        <div class="iconholder">
+          <img src="~assets/images/icons/survey.svg" />
+        </div>
         <h5>Community Survey</h5>
       </a>
     </div>
@@ -84,14 +94,46 @@ export default {
   justify-content: center;
   .ssection {
     width: 25%;
-    max-width: 160px;
+    max-width: 140px;
     padding: 20px;
     text-decoration: none;
     color: #000;
-    img {
-      width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:hover,
+    &:focus {
+      outline: none;
+      .iconholder {
+        border: 3px solid #2aaee1;
+        border-radius: 50%;
+        transition: all 0.2s ease-in-out;
+        background-color: #2aade13f;
+        img {
+          transform: scale(0.75);
+          transition: all 0.2s ease-in-out;
+        }
+      }
+      h5 {
+        color: #2aaee1;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+    .iconholder {
+      border: 3px solid transparent;
+      border-radius: 50%;
+      transition: all 0.2s ease-in-out;
+      img {
+        width: 100%;
+        transition: all 0.2s ease-in-out;
+      }
     }
     h5 {
+      font-size: 16px;
+      font-weight: bold;
+      padding-top: 20px;
+      text-align: center;
+      transition: all 0.2s ease-in-out;
     }
   }
 }

@@ -66,7 +66,7 @@ export default {
 .leading {
   text-align: center;
   max-width: 900px;
-  padding: 50px 20px 20px 20px;
+  padding: 20px;
   margin: 0 auto;
   p {
     text-align: left;

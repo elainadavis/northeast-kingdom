@@ -3,8 +3,6 @@
     <div class="leading">
       <div class="imhold">
         <img src="~assets/images/client.jpg" />
-        +
-        <img src="~assets/images/tilson.png" />
       </div>
       <h1>TWISP Broadband Initiative</h1>
       <h3>Connecting Methow Valley to the 21st Century</h3>
@@ -81,7 +79,7 @@ export default {
     align-items: center;
     margin-bottom: 20px;
     img {
-      width: 80px;
+      width: 120px;
       margin: 20px;
     }
   }

@@ -91,7 +91,7 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   .ssection {
-    width: 25%;
+    width: 20%;
     max-width: 140px;
     padding: 20px;
     text-decoration: none;

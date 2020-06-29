@@ -82,10 +82,10 @@ export default {
             download_speed: speedData.downloadValue,
             upload_speed: speedData.uploadValue,
             latency: speedData.pingValue,
-            browser: speedData.browser,
-            operating_sys: speedData.os,
-            device: speedData.device,
-            isp: speedData.isp
+            internet_browser: speedData.browser["browser"],
+            operating_sys: speedData.browser["os"],
+            user_device: speedData.browser["device"],
+            user_isp: speedData.isp["isp"]
           });
         }
       });

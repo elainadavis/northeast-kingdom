@@ -79,8 +79,13 @@ export default {
           // ANSWER INTERNET SPEED QUESTION WITH CONNECTION SPEED INFO //
           //
           survey123WebForm.setQuestionValue({
-            internet_speed: speedData.downloadValue,
-            field_14: speedData.uploadValue
+            download_speed: speedData.downloadValue,
+            upload_speed: speedData.uploadValue,
+            latency: speedData.pingValue,
+            browser: speedData.browser,
+            operating_sys: speedData.os,
+            device: speedData.device,
+            isp: speedData.isp
           });
         }
       });

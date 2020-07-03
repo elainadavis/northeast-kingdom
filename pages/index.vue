@@ -55,6 +55,7 @@
 
 <script>
 export default {
+  layout: "landing",
   data: function() {
     return {};
   },

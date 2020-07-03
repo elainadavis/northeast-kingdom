@@ -1,14 +1,5 @@
 <template>
   <div class="container">
-    <div class="header">
-      <a href="https://tilsonbbc.netlify.app/survey/" class="logo">
-        <img src="~assets/images/twisp_survey_logo.jpg" width="250" height="52" />
-      </a>
-      <div class="header-right">
-        <a class="active" href="https://tilsonbbc.netlify.app/">Home</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
     <div class="form-container" id="speedcheckcontainer">
       <div class="introtitle">
         <h1>Methow Valley Internet Survey</h1>

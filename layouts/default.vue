@@ -1,14 +1,18 @@
 <template>
   <div class="maincontain">
+    <Header />
     <nuxt />
     <Footer />
   </div>
 </template>
 <script>
 import Footer from "~/components/Footer.vue";
+import Header from "~/components/Header.vue";
+
 export default {
   components: {
-    Footer
+    Footer,
+    Header
   }
 };
 </script>
@@ -32,7 +36,7 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-.maincontain{
+.maincontain {
   position: relative;
   min-height: 100vh;
   padding-bottom: 80px;

@@ -7,7 +7,7 @@
       Twispworks
     </div>
     <div class="header-right">
-      <nuxt-link v-for="page in pages" v-bind:key="page.name" v-html="page.name" :to="`/${page.slug}"></nuxt-link>
+      <nuxt-link v-for="page in pages" v-bind:key="page.name" v-html="page.name" :to="`/${page.slug}`"></nuxt-link>
     </div>
   </div>
 </template>

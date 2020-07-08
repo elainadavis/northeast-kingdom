@@ -27,6 +27,10 @@ export default {
       { src: "https://survey123.arcgis.com/api/jsapi" }
     ]
   },
+  router: {
+    linkActiveClass: 'active-nav-link',
+    linkExactActiveClass: 'exact-active-nav-link',
+  },
   /*
    ** Customize the progress-bar color
    */
@@ -64,6 +68,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) { }
   }
 };

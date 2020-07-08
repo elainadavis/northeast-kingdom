@@ -1,56 +1,97 @@
 <template>
   <div class="header">
-    <a href="https://tilsonbbc.netlify.app/survey/" class="logo">
-      <img src="~assets/images/twisp_survey_logo.jpg" width="250" height="52" />
-    </a>
+    <div class="header-left">
+      <a href="/" class="logo">
+        <img src="~assets/images/client.jpg" />
+      </a>
+      Twispworks
+    </div>
     <div class="header-right">
-      <a class="active" href="https://tilsonbbc.netlify.app/">Home</a>
-      <a href="#contact">Contact</a>
+      <nuxt-link v-for="page in pages" v-bind:key="page.name" v-html="page.name" :to="page.slug"></nuxt-link>
     </div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data: function() {
+    return {
+      pages: [
+        {
+          name: "Document Library",
+          slug: "library"
+        },
+        {
+          name: "Important Dates",
+          slug: "calendar"
+        },
+        {
+          name: "Recent News",
+          slug: "news"
+        },
+        {
+          name: "Community Survey",
+          slug: "survey"
+        },
+        {
+          name: "Contact Us",
+          slug: "contact"
+        }
+      ]
+    };
+  }
+};
 </script>
 <style lang="scss" scoped>
 /* Style for navbar on Survey page */
 .header {
   overflow: hidden;
   background-color: #ffffff;
-  padding: 10px 5px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0 2px 5px 2px #b3b3b3;
 }
 
-/* Header links */
-.header a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 8px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
-}
-
-.header a.logo {
-  font-size: 25px;
-  font-weight: bold;
+.header a.logo img {
+  height: 60px;
+  margin-right: 15px;
 }
 
 .header a:hover {
-  background-color: #ddd;
-  color: black;
+  // background-color: #ddd;
+  // color: black;
 }
 
-/* Active/current link*/
-.header a.active {
-  background-color: #2aaee1;
-  color: white;
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .header-right {
-  float: right;
-  padding-right: 5px;
+  a {
+    font-size: 14px;
+    font-weight: 800;
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 50px;
+    &.active-nav-link {
+      color: #2aaee1;
+    }
+    &:hover {
+      background: #2aaee1;
+      color: #fff;
+    }
+  }
 }
 
 /* Media queries for responsiveness */

@@ -1,0 +1,34 @@
+{
+  "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis tortor et dolor sodales, at euismod ipsum pellentesque. Suspendisse mattis elit eget mauris aliquet elementum. Nunc finibus ante non tortor cursus, volutpat posuere est sollicitudin. Aliquam vel porttitor purus. Proin congue, augue nec iaculis commodo, massa mauris feugiat magna, et condimentum nunc dui vitae nibh. Cras auctor rhoncus odio eu ullamcorper. Donec consequat, tortor viverra cursus vehicula, lorem leo sodales ante, bibendum vulputate nisi mi ac est. Aenean in sapien ac ligula elementum auctor id vitae lectus.",
+  "items": [
+    {
+      "title": "Event Name",
+      "description": "A brief description of the event",
+      "when": "July 30, 2020 at 8:00pm",
+      "where": "Venue Name, 110 Main St., Portland ME",
+      "optional_link": "http://www.google.com"
+    },
+    {
+      "title": "Event Name 2",
+      "description": "A brief description of the event",
+      "when": "July 30, 2020 at 8:00pm",
+      "where": "Venue Name, 110 Main St., Portland ME",
+      "optional_link": "http://www.google.com"
+    },
+    {
+      "title": "Event Name 3",
+      "description": "A brief description of the event",
+      "when": "July 30, 2020 at 8:00pm",
+      "where": "Venue Name, 110 Main St., Portland ME",
+      "optional_link": "http://www.google.com"
+    },
+    {
+      "title": "Event Name 4",
+      "description": "A brief description of the event",
+      "when": "July 30, 2020 at 8:00pm",
+      "where": "Venue Name, 110 Main St., Portland ME",
+      "optional_link": "http://www.google.com"
+    },
+
+  ]
+}

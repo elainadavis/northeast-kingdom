@@ -1,0 +1,23 @@
+{
+  "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis tortor et dolor sodales, at euismod ipsum pellentesque. Suspendisse mattis elit eget mauris aliquet elementum. Nunc finibus ante non tortor cursus, volutpat posuere est sollicitudin. Aliquam vel porttitor purus. Proin congue, augue nec iaculis commodo, massa mauris feugiat magna, et condimentum nunc dui vitae nibh. Cras auctor rhoncus odio eu ullamcorper. Donec consequat, tortor viverra cursus vehicula, lorem leo sodales ante, bibendum vulputate nisi mi ac est. Aenean in sapien ac ligula elementum auctor id vitae lectus.",
+  "items": [
+    {
+      "name": "Contact Name",
+      "title": "Contact Title",
+      "email": "contact@gmail.com",
+      "phone": "207-123-4567"
+    },
+    {
+      "name": "Contact Name 2",
+      "title": "Contact Title",
+      "email": "contact@gmail.com",
+      "phone": "207-123-4567"
+    },
+    {
+      "name": "Contact Name 3",
+      "title": "Contact Title",
+      "email": "contact@gmail.com",
+      "phone": "207-123-4567"
+    }
+  ]
+}

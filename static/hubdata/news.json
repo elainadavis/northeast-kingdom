@@ -1,0 +1,20 @@
+{
+  "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis tortor et dolor sodales, at euismod ipsum pellentesque. Suspendisse mattis elit eget mauris aliquet elementum. Nunc finibus ante non tortor cursus, volutpat posuere est sollicitudin. Aliquam vel porttitor purus. Proin congue, augue nec iaculis commodo, massa mauris feugiat magna, et condimentum nunc dui vitae nibh. Cras auctor rhoncus odio eu ullamcorper. Donec consequat, tortor viverra cursus vehicula, lorem leo sodales ante, bibendum vulputate nisi mi ac est. Aenean in sapien ac ligula elementum auctor id vitae lectus.",
+  "items": [
+    {
+      "title": "Event Name",
+      "short_description": "Here is a brief description of the news article",
+      "full_article": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis tortor et dolor sodales, at euismod ipsum pellentesque. Suspendisse mattis elit eget mauris aliquet elementum. Nunc finibus ante non tortor cursus, volutpat posuere est sollicitudin. Aliquam vel porttitor purus. Proin congue, augue nec iaculis commodo, massa mauris feugiat magna, et condimentum nunc dui vitae nibh. Cras auctor rhoncus odio eu ullamcorper. Donec consequat, tortor viverra cursus vehicula, lorem leo sodales ante, bibendum vulputate nisi mi ac est. Aenean in sapien ac ligula elementum auctor id vitae lectus"
+    },
+    {
+      "title": "Event Name 2",
+      "short_description": "Here is a brief description of the news article",
+      "full_article": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis tortor et dolor sodales, at euismod ipsum pellentesque. Suspendisse mattis elit eget mauris aliquet elementum. Nunc finibus ante non tortor cursus, volutpat posuere est sollicitudin. Aliquam vel porttitor purus. Proin congue, augue nec iaculis commodo, massa mauris feugiat magna, et condimentum nunc dui vitae nibh. Cras auctor rhoncus odio eu ullamcorper. Donec consequat, tortor viverra cursus vehicula, lorem leo sodales ante, bibendum vulputate nisi mi ac est. Aenean in sapien ac ligula elementum auctor id vitae lectus"
+    },
+    {
+      "title": "Event Name 3",
+      "short_description": "Here is a brief description of the news article",
+      "full_article": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis tortor et dolor sodales, at euismod ipsum pellentesque. Suspendisse mattis elit eget mauris aliquet elementum. Nunc finibus ante non tortor cursus, volutpat posuere est sollicitudin. Aliquam vel porttitor purus. Proin congue, augue nec iaculis commodo, massa mauris feugiat magna, et condimentum nunc dui vitae nibh. Cras auctor rhoncus odio eu ullamcorper. Donec consequat, tortor viverra cursus vehicula, lorem leo sodales ante, bibendum vulputate nisi mi ac est. Aenean in sapien ac ligula elementum auctor id vitae lectus"
+    }
+  ]
+}

@@ -94,7 +94,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 180px);
   .introtitle {
     max-width: 900px;
     text-align: center;

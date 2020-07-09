@@ -2,13 +2,19 @@
   <div class="gen-container">
     <h1>Recent News</h1>
     <div class="news-intro">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis tortor et dolor sodales, at euismod ipsum pellentesque. Suspendisse mattis elit eget mauris aliquet elementum. Nunc finibus ante non tortor cursus, volutpat posuere est sollicitudin. Aliquam vel porttitor purus. Proin congue, augue nec iaculis commodo, massa mauris feugiat magna, et condimentum nunc dui vitae nibh. Cras auctor rhoncus odio eu ullamcorper. Donec consequat, tortor viverra cursus vehicula, lorem leo sodales ante, bibendum vulputate nisi mi ac est. Aenean in sapien ac ligula elementum auctor id vitae lectus.</p>
+      <p v-html="newsData.intro"></p>
     </div>
   </div>
 </template>
 <script>
-export default {
+import newsData from 'static/hubdata/news.json'
 
+export default {
+data: function(){
+  return {
+    newsData: newsData
+  }
+}
 };
 </script>
 <style lang="scss" scoped>

@@ -4,7 +4,7 @@
       <a href="/" class="logo">
         <img src="~assets/images/client.jpg" />
       </a>
-      Twispworks
+      {{generalData.projectName}}
     </div>
     <div class="header-right">
       <nuxt-link v-for="page in pages" v-bind:key="page.name" v-html="page.name" :to="`/${page.slug}`"></nuxt-link>
@@ -12,9 +12,12 @@
   </div>
 </template>
 <script>
+import generalData from 'static/hubdata/general.json'
+
 export default {
   data: function() {
     return {
+      generalData: generalData,
       pages: [
         {
           name: "Document Library",

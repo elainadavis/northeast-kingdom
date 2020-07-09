@@ -4,19 +4,9 @@
       <div class="imhold">
         <img src="~assets/images/client.jpg" />
       </div>
-      <h1>TWISP Broadband Initiative</h1>
-      <h3>Connecting Methow Valley to the 21st Century</h3>
-      <p>
-        Podunk unthaw owt Moody's robin showah noseeum gummah. Bangah junkah
-        wreckah Bangoah some wicked, down east out in th' willie-wacks dooryahd,
-        dingy hawsun around N'Hampshah gummah bookin' it aht mistah man. Nummah
-        than a faht dinnahbucket hahd tellin' not knowin' whawf out in th'
-        willie-wacks tunk what a cahd, wicked cunnin' bluebries Outta Staydahs
-        up t' junkah buggin' yessah-bub leaf peepahs fellers, yow uns Powrtland
-        Museum of Aht flatlandas heatah, stove up wickid decent owt junkah,
-        scrod lobstah paut Jeesum Crow junkah moose Moxie Moosetown, aht whawf
-        robin showah.
-      </p>
+      <h1 v-html="generalData.projectName"></h1>
+      <h3 v-html="generalData.projectByLine"></h3>
+      <p v-html="generalData.landingText"></p>
     </div>
     <div class="site-sections">
       <a href="/library" class="ssection">
@@ -54,10 +44,14 @@
 </template>
 
 <script>
+import generalData from "static/hubdata/general.json";
+
 export default {
   layout: "landing",
   data: function() {
-    return {};
+    return {
+      generalData: generalData
+    };
   },
   methods: {}
 };

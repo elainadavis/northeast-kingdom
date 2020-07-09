@@ -22,8 +22,6 @@
 
 <script>
 import surveyData from 'static/hubdata/survey.json'
-import generalData from 'static/hubdata/general.json'
-
 
 export default {
   mounted: function() {
@@ -57,7 +55,6 @@ export default {
     return {
       results: {},
       formInitialized: false,
-      generalData: generalData,
       surveyData: surveyData,
     };
   },

@@ -2,8 +2,8 @@
   <div class="container">
     <div class="form-container" id="speedcheckcontainer">
       <div class="introtitle">
-        <h1>Methow Valley Internet Survey</h1>
-        <h3>Please run the speed test below to begin the survey process, we look forward to capturing your feedback in an effort to improve and expand coverage in your area.</h3>
+        <h1>Community Survey</h1>
+        <h3 v-html="surveyData.intro"></h3>
       </div>
       <div id="sc-container">
         <div id="sc-branding" class="sc-bb">
@@ -21,6 +21,10 @@
 </template>
 
 <script>
+import surveyData from 'static/hubdata/survey.json'
+import generalData from 'static/hubdata/general.json'
+
+
 export default {
   mounted: function() {
     let vm = this;
@@ -52,18 +56,21 @@ export default {
   data: function() {
     return {
       results: {},
-      formInitialized: false
+      formInitialized: false,
+      generalData: generalData,
+      surveyData: surveyData,
     };
   },
   methods: {
     initializeForm: function(speedData) {
+      let vm = this;
       this.formInitialized = true;
       document.getElementById("speedcheckcontainer").style.display = "none";
       const survey123WebForm = new Survey123WebForm({
         container: "survey123-webform",
-        clientId: "Jy4JtM71ralXVggd",
+        clientId: vm.surveyData.clientId,
         portalUrl: "https://www.arcgis.com",
-        itemId: "f7d1b61670ec49788a8a9f246f5b2e9b",
+        itemId: vm.surveyData.itemId,
         hideElements: "navbar",
         onFormLoaded: data => {
           //

@@ -85,6 +85,7 @@ export default {
   margin: 0 auto;
   flex-wrap: wrap;
   justify-content: center;
+  position: relative;
   .ssection {
     width: 20%;
     max-width: 140px;
@@ -116,6 +117,7 @@ export default {
       border: 3px solid transparent;
       border-radius: 50%;
       transition: all 0.2s ease-in-out;
+      width: 100%;
       img {
         width: 100%;
         transition: all 0.2s ease-in-out;

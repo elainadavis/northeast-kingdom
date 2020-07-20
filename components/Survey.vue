@@ -5,6 +5,38 @@
         <h1>Community Survey</h1>
         <h3 v-html="surveyData.intro"></h3>
       </div>
+      <br>
+      <div class="container-md">
+        <div class="panel-heading">
+          <h2 class="panel-title"><center>Address Info</center></h2>
+      </div>
+      <br>
+        <div class="panel-body" id="address-container">
+          <input id="address-input" placeholder="Please enter your address"
+          type="text" class="address-box">
+          <br>
+            <div class="row">
+              <div class="column">
+                <label class="add-type"><b>Street address</b></label>
+                <input id="street_number" disabled="true">
+              </div>
+              <div class="column">
+                <label class="add-type"><b>City</b></label>
+                <input id="city" disabled="true">
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <label class="add-type"><b>State</b></label>
+                <input id="state" disabled="true">
+              </div>
+              <div class="column">
+                <label class="add-type"><b>Zip Code</b></label>
+                <input id="zip_code" disabled="true">
+              </div>
+            </div>
+        </div>
+      </div>
       <div id="sc-container">
         <div id="sc-branding" class="sc-bb">
           <a target="_blank" href="https://www.speedcheck.org/">
@@ -128,5 +160,22 @@ export default {
       display: none;
     }
   }
+}
+.column {
+  float: left;
+  padding: 10px;
+}
+.address-box {
+  display: block;
+  margin: 0 auto;
+  height: 30px;
+  width: 75%;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+
+
 }
 </style>

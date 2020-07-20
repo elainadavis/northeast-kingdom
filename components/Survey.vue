@@ -134,4 +134,21 @@ export default {
     }
   }
 }
+.column {
+  float: left;
+  padding: 10px;
+}
+.address-box {
+  display: block;
+  margin: 0 auto;
+  height: 30px;
+  width: 75%;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+
+
+}
 </style>

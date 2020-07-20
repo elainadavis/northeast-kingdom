@@ -5,6 +5,11 @@
         <h1>Community Survey</h1>
         <h3 v-html="surveyData.intro"></h3>
       </div>
+      <label for="address_input">Address</label>
+      <input type="text" id="address_input" name="address_input">
+      <label for="address_input">Zipcode</label>
+      <input type="text" id="address_input" name="address_input">
+
       <div id="sc-container">
         <div id="sc-branding" class="sc-bb">
           <a target="_blank" href="https://www.speedcheck.org/">

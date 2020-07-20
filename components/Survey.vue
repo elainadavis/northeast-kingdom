@@ -12,29 +12,31 @@
       </div>
       <br>
         <div class="panel-body" id="address-container">
-          <input id="address-input" placeholder="Please enter your address"
+          <input id="address-input" name="address-input" placeholder="Please enter your address"
           type="text" class="address-box">
           <br>
+          <form name="address-form">
             <div class="row">
               <div class="column">
                 <label class="add-type"><b>Street address</b></label>
-                <input id="street_number" disabled="true">
+                <input id="street_number" name="street_number" disabled="true">
               </div>
               <div class="column">
                 <label class="add-type"><b>City</b></label>
-                <input id="city" disabled="true">
+                <input id="city" name="city" disabled="true">
               </div>
             </div>
             <div class="row">
               <div class="column">
                 <label class="add-type"><b>State</b></label>
-                <input id="state" disabled="true">
+                <input id="state" name="state" disabled="true">
               </div>
               <div class="column">
                 <label class="add-type"><b>Zip Code</b></label>
-                <input id="zip_code" disabled="true">
+                <input id="zip_code" name="zip_code" disabled="true">
               </div>
             </div>
+          </form>
         </div>
       </div>
       <div id="sc-container">

@@ -5,12 +5,24 @@
         <h1>Community Survey</h1>
         <h3 v-html="surveyData.intro"></h3>
       </div>
-      <label for="address_input">Address</label>
-      <input type="text" id="address_input" name="address_input">
-      <label for="address_input">Zipcode</label>
-      <input type="text" id="address_input" name="address_input">
-
-      <div id="sc-container">
+      <div id="addressLookupContainer">
+        <label for="address_input">Address</label>
+        <input type="text" id="address_input" name="address_input" v-model="user_address" />
+        <label for="zipcode_input">Zipcode</label>
+        <input type="text" id="zipcode_input" name="zipcode_input" v-model="user_zip" />
+        <button v-on:click="getGeocodioInfo()">Lookup Address</button>
+        <div
+          class="address_error_message"
+          v-bind:class="{ visible: address_error }"
+        >{{address_error}}</div>
+        <div class="addressLookupBox" v-bind:class="{ visible: geoLookupResults }">
+          <h3>Please Select Your Verified Address:</h3>
+          <ul class="addresslookup" v-for="result in geoLookupResults" v-bind:key="result">
+            <li v-on:click="addressVerified(result)" v-html="result.formatted_address"></li>
+          </ul>
+        </div>
+      </div>
+      <div id="sc-container" style="display: none;">
         <div id="sc-branding" class="sc-bb">
           <a target="_blank" href="https://www.speedcheck.org/">
             <img src="https://cdn.speedcheck.org/branding/speedcheck-logo-18.png" alt="Speedcheck" />
@@ -26,7 +38,7 @@
 </template>
 
 <script>
-import surveyData from 'static/hubdata/survey.json'
+import surveyData from "static/hubdata/survey.json";
 
 export default {
   mounted: function() {
@@ -61,9 +73,48 @@ export default {
       results: {},
       formInitialized: false,
       surveyData: surveyData,
+      user_address: "",
+      user_zip: "",
+      geoLookupResults: [],
+      verified_address: {},
+      address_error: null
     };
   },
   methods: {
+    getGeocodioInfo: function() {
+      let vm = this;
+      vm.address_error = null;
+      if (!vm.user_address || !vm.user_zip) {
+        vm.address_error =
+          "Incomplete information, please enter your street address and zipcode and try again.";
+      } else {
+        this.$axios
+          .get(
+            `https://api.geocod.io/v1.6/geocode?q=${vm.user_address},${vm.user_zip}&api_key=a01b3ce373bbbb3fba37e7c05af0ef52fff05fc`
+          )
+          .then(function(response) {
+            if (
+              response.data.results === undefined ||
+              response.data.results.length == 0
+            ) {
+              vm.address_error =
+                "Unfortunately we weren't able to find results for that address/zipcode.  Please ensure your information is entered correctly.";
+            }
+            vm.geoLookupResults = response.data.results;
+            console.log(response);
+          })
+          .catch(function(error) {
+            vm.address_error = error.message;
+            console.log(error);
+          });
+      }
+    },
+    addressVerified: function(verifiedResultObj) {
+      let vm = this;
+      vm.verified_address = verifiedResultObj;
+      document.getElementById("addressLookupContainer").style.display = "none";
+      document.getElementById("sc-container").style.display = "inherit";
+    },
     initializeForm: function(speedData) {
       let vm = this;
       this.formInitialized = true;
@@ -84,6 +135,7 @@ export default {
             latency: speedData.pingValue,
             internet_browser: speedData.browser.browser,
             operating_sys: speedData.browser.os,
+            state: vm.verified_address.address_components.state,
             user_device: speedData.browser.device,
             user_isp: speedData.isp.isp
           });
@@ -98,6 +150,36 @@ export default {
 </script>
 
 <style lang="scss">
+#addressLookupContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.addressLookupBox {
+  display: none;
+  &.visible {
+    display: block;
+  }
+}
+.addresslookup {
+  li {
+    padding: 10px;
+    cursor: pointer;
+    list-style-type: none;
+    margin: 0;
+    &:hover {
+      background-color: #2aaee1;
+      color: #fff;
+    }
+  }
+}
+.address_error_message {
+  display: none;
+  &.visible {
+    display: block;
+  }
+}
 #speedcheckcontainer {
   display: flex;
   flex-direction: column;
@@ -148,7 +230,5 @@ export default {
 }
 
 @media only screen and (max-width: 700px) {
-
-
 }
 </style>

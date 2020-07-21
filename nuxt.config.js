@@ -1,7 +1,7 @@
 import generalData from './static/hubdata/general.json'
 
 export default {
-  mode: "spa",
+  mode: "universal",
   /*
    ** Headers of the page
    */

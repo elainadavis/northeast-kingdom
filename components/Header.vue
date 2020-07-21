@@ -7,12 +7,17 @@
       {{generalData.projectName}}
     </div>
     <div class="header-right">
-      <nuxt-link v-for="page in pages" v-bind:key="page.name" v-html="page.name" :to="`/${page.slug}`"></nuxt-link>
+      <nuxt-link
+        v-for="page in pages"
+        v-bind:key="page.name"
+        v-html="page.name"
+        :to="`/${page.slug}`"
+      ></nuxt-link>
     </div>
   </div>
 </template>
 <script>
-import generalData from 'static/hubdata/general.json'
+import generalData from "static/hubdata/general.json";
 
 export default {
   data: function() {
@@ -97,15 +102,35 @@ export default {
   }
 }
 
-/* Media queries for responsiveness */
-@media screen and (max-width: 500px) {
-  .header a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .header-right {
-    float: none;
+@media only screen and (max-width: 1080px) {
+  .header {
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      background: #2aaee1;
+      right: 0;
+      top: 0;
+      padding: 0px;
+      width: 280px;
+      height: 100vh;
+      box-shadow: 0 2px 5px 2px #b3b3b3;
+      z-index: 1000;
+      color: #fff;
+      a {
+        color: #fff;
+        border-radius: 0;
+        padding: 20px;
+        &.active-nav-link {
+          background: #fff;
+          color: #2aaee1;
+        }
+        &:hover {
+          background: #fff;
+          color: #2aaee1;
+        }
+      }
+    }
   }
 }
 </style>

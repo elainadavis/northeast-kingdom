@@ -6,17 +6,21 @@
         <h3 v-html="surveyData.intro"></h3>
       </div>
       <div id="addressLookupContainer">
-        <label for="address_input">Address</label>
-        <input type="text" id="address_input" name="address_input" v-model="user_address" />
-        <label for="zipcode_input">Zipcode</label>
-        <input type="text" id="zipcode_input" name="zipcode_input" v-model="user_zip" />
-        <button v-on:click="getGeocodioInfo()">Lookup Address</button>
+        <div class="formg">
+          <label for="address_input">Street Address:</label>
+          <input type="text" id="address_input" name="address_input" v-model="user_address" />
+        </div>
+        <div class="formg">
+          <label for="zipcode_input">Zipcode:</label>
+          <input type="text" id="zipcode_input" name="zipcode_input" v-model="user_zip" />
+        </div>
+        <button class="lookupbutt" v-on:click="getGeocodioInfo()">Lookup Address</button>
         <div
           class="address_error_message"
           v-bind:class="{ visible: address_error }"
         >{{address_error}}</div>
-        <div class="addressLookupBox" v-bind:class="{ visible: geoLookupResults }">
-          <h3>Please Select Your Verified Address:</h3>
+        <div class="addressLookupBox" v-bind:class="{ visible: geoLookupResults.length }">
+          <h4>Please Select Your Verified Address, you will then be prompted to run a speed test to check your internet connection:</h4>
           <ul class="addresslookup" v-for="result in geoLookupResults" v-bind:key="result">
             <li v-on:click="addressVerified(result)" v-html="result.formatted_address"></li>
           </ul>
@@ -113,7 +117,7 @@ export default {
       let vm = this;
       vm.verified_address = verifiedResultObj;
       document.getElementById("addressLookupContainer").style.display = "none";
-      document.getElementById("sc-container").style.display = "inherit";
+      document.getElementById("sc-container").style.display = "block";
     },
     initializeForm: function(speedData) {
       let vm = this;
@@ -150,16 +154,48 @@ export default {
 </script>
 
 <style lang="scss">
+.lookupbutt {
+  padding: 17px 30px;
+  border-radius: 50px;
+  border: none;
+  background-color: #2aaee1;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 20px 0;
+  cursor: pointer;
+}
 #addressLookupContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .formg {
+    margin: 10px;
+    width: 310px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    label {
+      padding-right: 10px;
+    }
+  }
 }
 .addressLookupBox {
   display: none;
+  h4 {
+    color: #2aaee1;
+  }
+  ul {
+    padding: 0;
+  }
   &.visible {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 .addresslookup {
@@ -168,14 +204,19 @@ export default {
     cursor: pointer;
     list-style-type: none;
     margin: 0;
+    padding: 10px 28px;
+    margin: 10px 0;
     &:hover {
-      background-color: #2aaee1;
-      color: #fff;
+      background-color: #c4f4ff;
+      color: #000;
+      border-radius: 50px;
+      box-shadow: 0 2px 1px #b6b6b6;
     }
   }
 }
 .address_error_message {
   display: none;
+  color: #e95331;
   &.visible {
     display: block;
   }
@@ -191,6 +232,7 @@ export default {
     text-align: center;
     margin: 15px;
     color: #2aaee1;
+    padding-bottom: 30px;
   }
 }
 .iframecontainer {

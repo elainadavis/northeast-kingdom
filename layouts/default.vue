@@ -40,6 +40,7 @@ html {
   position: relative;
   min-height: 100vh;
   padding-bottom: 80px;
+  overflow-x: hidden;
 }
 
 .button--green {

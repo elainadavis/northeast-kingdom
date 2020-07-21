@@ -114,6 +114,11 @@ export default {
       ]
     };
   },
+  watch: {
+    $route() {
+      this.closeMenu();
+    }
+  },
   methods: {
     closeMenu: function() {
       document.querySelector(".header-right").classList.add("menuClosed");

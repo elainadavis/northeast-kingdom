@@ -139,9 +139,13 @@ export default {
             latency: speedData.pingValue,
             internet_browser: speedData.browser.browser,
             operating_sys: speedData.browser.os,
-            state: vm.verified_address.address_components.state,
+            full_address: vm.verified_address.formatted_address,
+            user_lat: vm.verified_address.location.lat,
+            user_long: vm.verified_address.location.lng,
             user_device: speedData.browser.device,
-            user_isp: speedData.isp.isp
+            user_isp: speedData.isp.isp,
+            isp_lat: speedData.isp.lat,
+            isp_long: speedData.isp.lon,
           });
         }
       });

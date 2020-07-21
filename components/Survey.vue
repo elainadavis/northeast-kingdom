@@ -33,11 +33,13 @@
           </a>
         </div>
       </div>
+      <button id="no_intBtn" class="no-internet" style="display: none;" @click="initializeForm">I do not have Internet access at my residence</button>
     </div>
     <script src="https://cdn.speedcheck.org/basic/scbjs.min.js" async></script>
     <div id="survey-panel" class="panel panel-white panel-no-border hide">
       <div id="survey123-webform" class="panel panel-no-padding panel-no-border"></div>
     </div>
+  <button id="scrollBtn" style="visibility: hidden"><a href="#" style="color: white; text-decoration: none !important"><span>&#8593;</span>   Scroll to Top</a></button>
   </div>
 </template>
 
@@ -118,6 +120,7 @@ export default {
       vm.verified_address = verifiedResultObj;
       document.getElementById("addressLookupContainer").style.display = "none";
       document.getElementById("sc-container").style.display = "block";
+      document.getElementById("no_intBtn").style.display = "block";
     },
     initializeForm: function(speedData) {
       let vm = this;
@@ -152,6 +155,7 @@ export default {
       // SHOW SURVEY123 FORM //
       let surveyPanel = document.getElementById("survey-panel");
       surveyPanel.classList.remove("hide");
+      document.getElementById("scrollBtn").style.visibility = "visible";
     }
   }
 };
@@ -239,6 +243,22 @@ export default {
     padding-bottom: 30px;
   }
 }
+.no-internet {
+  background: #909090;
+  color: #fff;
+  font-family: verdana;
+  word-spacing: 1;
+  border-radius: 25px;
+  display: block;
+  width: 300px;
+  font-size: 12px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  padding: 10px;
+  text-align: center;
+  margin: 20px auto;
+  cursor: pointer;
+}
 .iframecontainer {
   margin: 40px;
   background-color: rgb(26, 26, 26);
@@ -274,7 +294,27 @@ export default {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
 }
-
-@media only screen and (max-width: 700px) {
+#scrollBtn {
+    position: fixed;
+    bottom: 80px;
+    float: right;
+    right: 15%;
+    left: 85%;
+    max-width: 50px;
+    width: 100%;
+    font-size: 12px;
+    border: none;
+    z-index: 99;
+    background-color: #5B9BD5;
+    padding: 1px;
+    border-radius: 4px;
+}
+#scrollBtn:hover {
+    background-color: gray;
+}
+@media screen and (max-width: 900px) {
+  .no-internet a {
+    width: 100px;
+  }
 }
 </style>

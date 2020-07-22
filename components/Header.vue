@@ -91,26 +91,6 @@ export default {
     return {
       generalData: generalData,
       pages: [
-        {
-          name: "Document Library",
-          slug: "library"
-        },
-        {
-          name: "Important Dates",
-          slug: "calendar"
-        },
-        {
-          name: "Recent News",
-          slug: "news"
-        },
-        {
-          name: "Community Survey",
-          slug: "survey"
-        },
-        {
-          name: "Contact Us",
-          slug: "contact"
-        }
       ]
     };
   },

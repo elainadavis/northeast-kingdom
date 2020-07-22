@@ -7,11 +7,11 @@
       </div>
       <div id="addressLookupContainer">
         <div class="formg">
-          <label for="address_input">Street Address:</label>
+          <label for="address_input"><b>Street Address:</b></label>
           <input type="text" id="address_input" name="address_input" v-model="user_address" />
         </div>
         <div class="formg">
-          <label for="zipcode_input">Zipcode:</label>
+          <label for="zipcode_input"><b>Zipcode:</b></label>
           <input type="text" id="zipcode_input" name="zipcode_input" v-model="user_zip" />
         </div>
         <button class="lookupbutt" v-on:click="getGeocodioInfo()">Lookup Address</button>

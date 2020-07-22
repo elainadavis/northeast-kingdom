@@ -6,7 +6,7 @@
       </a>
       {{generalData.projectName}}
     </div>
-    <div class="mobilham" @click="openMenu()">
+    <div v-if="pages.length !== 0" class="mobilham" @click="openMenu()">
       <svg
         height="100px"
         width="100px"

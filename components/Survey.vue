@@ -20,11 +20,14 @@
           v-bind:class="{ visible: address_error }"
         >{{address_error}}</div>
         <div class="addressLookupBox" v-bind:class="{ visible: geoLookupResults.length }">
-          <h4>Please Select Your Verified Address, you will then be prompted to run a speed test to check your internet connection:</h4>
+          <h4>Please select your verified address, you will then be prompted to run a speed test to check your internet connection:</h4>
           <ul class="addresslookup" v-for="result in geoLookupResults" v-bind:key="result">
             <li v-on:click="addressVerified(result)" v-html="result.formatted_address"></li>
           </ul>
         </div>
+      </div>
+      <div id="device-wifi" style="display: none;" class="speed-msg">
+        <h4>Please ensure that your device is connected to Wifi to accurately test the Internet speed.</h4>
       </div>
       <script src="https://cdn.speedcheck.org/basic/scbjs.min.js" async></script>
       <div id="sc-container" style="display: none;">
@@ -32,7 +35,7 @@
           <a target="_blank" href="https://www.speedcheck.org/">
             <img src="https://cdn.speedcheck.org/branding/speedcheck-logo-18.png" alt="Speedcheck" />
           </a>
-      </div>    
+        </div>    
       </div>
       <button id="no_intBtn" class="no-internet" style="display: none;" @click="initializeForm">I do not have Internet access at my residence</button>
     </div>
@@ -119,6 +122,7 @@ export default {
       let vm = this;
       vm.verified_address = verifiedResultObj;
       document.getElementById("addressLookupContainer").style.display = "none";
+      document.getElementById("device-wifi").style.display = "block";
       document.getElementById("sc-container").style.display = "block";
       document.getElementById("no_intBtn").style.display = "block";
     },
@@ -191,10 +195,17 @@ export default {
     }
   }
 }
+.speed-msg {
+  h4 {
+    color: #2aaee1;
+    font-size: 18px;
+  }
+}
 .addressLookupBox {
   display: none;
   h4 {
     color: #2aaee1;
+    font-size: 18px;
   }
   ul {
     padding: 0;

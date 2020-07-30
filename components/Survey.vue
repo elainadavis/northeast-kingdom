@@ -42,7 +42,6 @@
     <div id="survey-panel" class="panel panel-white panel-no-border hide">
       <div id="survey123-webform" class="panel panel-no-padding panel-no-border"></div>
     </div>
-  <button id="scrollBtn" style="visibility: hidden"><a href="#" style="color: white; text-decoration: none !important"><span>&#8593;</span>   Scroll to Top</a></button>
   </div>
 </template>
 
@@ -154,13 +153,15 @@ export default {
             isp_lat: speedData.isp.lat,
             isp_long: speedData.isp.lon,
           });
-        }
+        },
+        onFormSubmitted: function scrollWin() {
+          window.scrollTo(0,0);
+        },
       });
       // SHOW SURVEY123 FORM //
       let surveyPanel = document.getElementById("survey-panel");
       surveyPanel.classList.remove("hide");
-      document.getElementById("scrollBtn").style.visibility = "visible";
-    }
+    },
   }
 };
 </script>
@@ -304,24 +305,6 @@ export default {
   width: 75%;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
-}
-#scrollBtn {
-    position: fixed;
-    bottom: 80px;
-    float: right;
-    right: 15%;
-    left: 85%;
-    max-width: 50px;
-    width: 100%;
-    font-size: 12px;
-    border: none;
-    z-index: 99;
-    background-color: #5B9BD5;
-    padding: 1px;
-    border-radius: 4px;
-}
-#scrollBtn:hover {
-    background-color: gray;
 }
 @media screen and (max-width: 900px) {
   .no-internet a {

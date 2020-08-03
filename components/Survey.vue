@@ -27,9 +27,8 @@
         </div>
       </div>
       <div id="device-wifi" style="display: none;" class="speed-msg">
-        <h4>Please ensure that your device is connected to Wifi to accurately test the Internet speed.</h4>
+        <h4>Internet speed test results may vary based on network congestion and available bandwidth. For the most accurate results, please ensure that your device is connected to Wifi and that all other applications and programs are closed.</h4>
       </div>
-      <script src="https://cdn.speedcheck.org/basic/scbjs.min.js" async></script>
       <div id="sc-container" style="display: none;">
         <div id="sc-branding" class="sc-bb">
           <a target="_blank" href="https://www.speedcheck.org/">
@@ -37,7 +36,10 @@
           </a>
         </div>    
       </div>
-      <button id="no_intBtn" class="no-internet" style="display: none;" @click="initializeForm">I do not have Internet access at my residence</button>
+      <script src="https://cdn.speedcheck.org/basic/scbjs.min.js" async></script>
+      <div>
+        <button id="no_intBtn" class="no-internet" style="display: none;" @click="initializeForm">I do not have Internet access at my residence</button>
+      </div>
     </div>
     <div id="survey-panel" class="panel panel-white panel-no-border hide">
       <div id="survey123-webform" class="panel panel-no-padding panel-no-border"></div>
@@ -200,6 +202,10 @@ export default {
   h4 {
     color: #2aaee1;
     font-size: 18px;
+    max-width: 1000px;
+    text-align: center;
+    margin: 15px;
+    padding-bottom: 30px;
   }
 }
 .addressLookupBox {

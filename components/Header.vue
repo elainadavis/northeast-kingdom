@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header-left">
       <a href="/" class="logo">
-        <img src="~assets/images/client.jpg" />
+        <img src="" />
       </a>
       {{generalData.projectName}}
     </div>

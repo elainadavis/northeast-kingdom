@@ -122,10 +122,10 @@ export default {
     addressVerified: function(verifiedResultObj) {
       let vm = this;
       vm.verified_address = verifiedResultObj;
-      document.getElementById("sc-container").style.display = "block";
       document.getElementById("addressLookupContainer").style.display = "none";
       document.getElementById("device-wifi").style.display = "block";
       document.getElementById("no_intBtn").style.display = "block";
+      document.getElementById("sc-container").style.display = "block";
     },
     initializeForm: function(speedData) {
       let vm = this;

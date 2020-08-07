@@ -100,7 +100,7 @@ export default {
       } else {
         this.$axios
           .get(
-            `https://api.geocod.io/v1.6/geocode?q=${vm.user_address},${vm.user_zip}&api_key=a01b3ce373bbbb3fba37e7c05af0ef52fff05fc`
+            `https://api.geocod.io/v1.6/geocode?q=${vm.user_address},${vm.user_zip}&api_key=f34d2499ff2f45d5f15d5f485ff8f0924452f83`
           )
           .then(function(response) {
             if (
